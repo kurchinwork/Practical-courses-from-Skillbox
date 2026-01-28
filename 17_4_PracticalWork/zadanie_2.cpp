@@ -16,4 +16,6 @@ int main () {
         list[i] = i;
     }
     outInitlist(list);
+
+    return 0;
 }

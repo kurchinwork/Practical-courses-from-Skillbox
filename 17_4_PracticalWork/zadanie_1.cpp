@@ -13,4 +13,6 @@ int main () {
         b = 20;
     swapInt(&a, &b);
     cout << a << " " << b;
+
+    return 0;
 }
