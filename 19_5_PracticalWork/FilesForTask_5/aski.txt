@@ -1,0 +1,13 @@
+cout
+;
+main
+cin
+int
+double
+if
+while
+syntactic
+iostream
+debugging
+==
+int
