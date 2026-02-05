@@ -60,7 +60,11 @@ void gameTitle() {
 }
 void mainGameFunction(ifstream &questionFile, ifstream &askFile) {
     gameTitle();
-    for (int stepGame = 1; stepGame <= 6; stepGame++) {
+
+    auto initialQuestPos = questionFile.tellg();
+    auto initialAskPos = askFile.tellg();
+
+    for (int stepGame = 1; stepGame < 6; stepGame++) {
         int initOffset = -1;
         while (initOffset < 0) {
             cout << "\n~~~~~~~Round #" << stepGame <<
@@ -69,8 +73,14 @@ void mainGameFunction(ifstream &questionFile, ifstream &askFile) {
                 cout << "ONLY positive values!\n";
         } // контроль ввода
 
-        int targetLineForQuesti = offsetFunc(initOffset), // строка вопроса которую надо отобразить
-            currentLineQuesti = 1;
+        int targetLineForQuesti = offsetFunc(initOffset); // строка вопроса которую надо отобразить
+
+        questionFile.clear();  // Сбрасываем флаги ошибок (включая EOF)
+        questionFile.seekg(initialQuestPos);  // Возвращаемся в начало файла
+
+        askFile.clear();
+        askFile.seekg(initialAskPos);
+        int currentLineQuesti = 1;
         std::string lineQuesti;
 
         while (std::getline(questionFile, lineQuesti)) {
