@@ -7,7 +7,6 @@
 #include <algorithm>
 
 using namespace std;
-
 int gameScoreUser = 0,
     gameScorePC = 0;
 
