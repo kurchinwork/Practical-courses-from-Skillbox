@@ -1,0 +1,13 @@
+1. Which operator displays text on the screen in C++?
+2. What character appears at the end of each command in C++?
+3. What is the name of the function that begins program execution?
+4. Which operator is used for keyboard input?
+5. What data type is used for integers?
+6. What data type is used for fractional numbers?
+7. Which operator is currently in the "if" state?
+8. Which operator executes code multiple times?
+9. What is the name of the error when you forget to put a semicolon?
+10. What header file is needed to use cout and cin?
+11. What is the name for finding and fixing errors in a program?
+12. What operator is used for equality comparison?
+13. What data type is used for integers?
