@@ -13,7 +13,8 @@ struct house {
     kitchen = 0.0f,
     bathroom = 0.0f,
     childrensRoom = 0.0f,
-    livingRoom = 0.0f;
+    livingRoom = 0.0f,
+    totalSqr = 0.0f;
 
     int countFloor = 0;
     vector<vector<float>> sqrFloor;
@@ -39,39 +40,36 @@ void resettingElements () {
     descriptHouse.livingRoom = 0.0f;
     descriptHouse.kitchen = 0.0f;
     descriptHouse.bathroom = 0.0f;
-}
+} //Обнуляю элементы для ввода данных поэтажам вызываю в initHouse
 void initPlot() {
     plotSqr strctPlot;
 
-    cout << "\nEnter the following information:"
-            "\n   Plot name:"; getline(cin, strctPlot.titlePlot);
+    cout << "\n\tEnter the following information"
+            "\nPlot name:"; getline(cin, strctPlot.titlePlot);
 
-    cout << "Plot number (integer numbers only), sqr of garages, sqr of bathhouses, and sqr barns (0.0 format for every):" << endl;
-    cin >> strctPlot.numberPlot
-        >> strctPlot.garage
-        >> strctPlot.bathhouse
-        >> strctPlot.barn;
-}
+    cout << "Plot number (integer numbers only): "; cin >> strctPlot.numberPlot;
+    cout << "<< Next data on 0.0f format >>\n";
+    cout << "Sqr of garages: "; cin >> strctPlot.garage;
+    cout << "Sqr of bathhouses: "; cin >> strctPlot.bathhouse;
+    cout << "Sqr barns:"; cin >> strctPlot.barn;
+} //сначала юзер вводит инфу об участке потом вводит дом и тд
 void initHouse () {
     house descriptHouse;
 
-    cout << "\nHow many floors are there in the building?"; cin >> descriptHouse.countFloor;
-    cout << "\nEnter the proposed rooms in stages; if the room is not available, enter 0.";
+    cout << "\nHow many floors are there in the building?"
+            "\nEnter:"; cin >> descriptHouse.countFloor;
+    cout << "Enter the proposed rooms in stages; if the room is not available, enter 0.";
 
    for (int i = 0; i < descriptHouse.countFloor; i++) {
-        vector<float> allSqrFloor;
+       vector<float> allSqrFloor;
+       resettingElements();
 
-        resettingElements();
-
-        cout << "\nEnter data floor #" << i + 1 << "."
-                "\nEnter the following information:"
-                "\n   Sqr for bedroom, childrensroom, livingroom, kitchen, bathroom:" << endl;
-
-        cin >> descriptHouse.bedroom
-            >> descriptHouse.childrensRoom
-            >> descriptHouse.livingRoom
-            >> descriptHouse.kitchen
-            >> descriptHouse.bathroom;
+       cout << "\nEnter data floor #" << i + 1 << "." << endl;
+       cout << "Sqr of bedroom: "; cin >> descriptHouse.bedroom;
+       cout << "Sqr of childrens: "; cin >> descriptHouse.childrensRoom;
+       cout << "Sqr of living: "; cin >> descriptHouse.livingRoom;
+       cout << "Sqr of kitchen: "; cin >> descriptHouse.kitchen;
+       cout << "Sqr of bathroom: "; cin >> descriptHouse.bathroom;
 
         if (!(descriptHouse.bedroom < 0 ||
             descriptHouse.childrensRoom < 0 ||
@@ -85,6 +83,9 @@ void initHouse () {
             allSqrFloor.push_back(descriptHouse.kitchen);
             allSqrFloor.push_back(descriptHouse.bathroom);
             descriptHouse.sqrFloor.push_back(allSqrFloor);
+
+            //Необходимо сюда добавить логику складывания поэтажной площади и типа вывести сколько квадратов дом
+            //Потом организовать функцию что юзер вводит желаемую площадь расчета после идет расчет от занятой площади
 
             } else {
                 cout << "\nInvalid Value";
