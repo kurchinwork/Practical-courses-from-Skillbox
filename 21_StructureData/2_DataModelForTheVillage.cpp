@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <numeric>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ struct house {
     bathroom = 0.0f,
     childrensRoom = 0.0f,
     livingRoom = 0.0f,
-    totalSqr = 0.0f;
+    totalSqrHouse = 0.0f;
 
     int countFloor = 0;
     vector<vector<float>> sqrFloor;
@@ -30,20 +31,18 @@ struct plotSqr {
           barn = 0.0f,
           plotSqrt = 0.0f;
 
+    //здесь не завожу вектор поскольку параметров участка которые содержатся в переменных считаю достаточно
+
 };
 
-void resettingElements () {
-    house descriptHouse;
-
+void resettingElements (house& descriptHouse) {
     descriptHouse.bedroom = 0.0f;
     descriptHouse.childrensRoom = 0.0f;
     descriptHouse.livingRoom = 0.0f;
     descriptHouse.kitchen = 0.0f;
     descriptHouse.bathroom = 0.0f;
-} //Обнуляю элементы для ввода данных поэтажам вызываю в initHouse
-void initPlot() {
-    plotSqr strctPlot;
-
+} //Обнуляю элементы для ввода данных по этажам вызываю в initHouse
+void initPlot(plotSqr& strctPlot) {
     cout << "\n\tEnter the following information"
             "\nPlot name:"; getline(cin, strctPlot.titlePlot);
 
@@ -52,24 +51,23 @@ void initPlot() {
     cout << "Sqr of garages: "; cin >> strctPlot.garage;
     cout << "Sqr of bathhouses: "; cin >> strctPlot.bathhouse;
     cout << "Sqr barns:"; cin >> strctPlot.barn;
+    cout << "Total sqr plot: "; cin >> strctPlot.plotSqrt;
 } //сначала юзер вводит инфу об участке потом вводит дом и тд
-void initHouse () {
-    house descriptHouse;
-
+void initHouse (house& descriptHouse) {
     cout << "\nHow many floors are there in the building?"
             "\nEnter:"; cin >> descriptHouse.countFloor;
     cout << "Enter the proposed rooms in stages; if the room is not available, enter 0.";
+    descriptHouse.totalSqrHouse = 0.0f;
+    for (int i = 0; i < descriptHouse.countFloor; i++) {
+        vector<float> allSqrFloor;
+        resettingElements(descriptHouse);
 
-   for (int i = 0; i < descriptHouse.countFloor; i++) {
-       vector<float> allSqrFloor;
-       resettingElements();
-
-       cout << "\nEnter data floor #" << i + 1 << "." << endl;
-       cout << "Sqr of bedroom: "; cin >> descriptHouse.bedroom;
-       cout << "Sqr of childrens: "; cin >> descriptHouse.childrensRoom;
-       cout << "Sqr of living: "; cin >> descriptHouse.livingRoom;
-       cout << "Sqr of kitchen: "; cin >> descriptHouse.kitchen;
-       cout << "Sqr of bathroom: "; cin >> descriptHouse.bathroom;
+        cout << "\nEnter data floor #" << i + 1 << "." << endl;
+        cout << "Sqr of bedroom: "; cin >> descriptHouse.bedroom;
+        cout << "Sqr of childrens: "; cin >> descriptHouse.childrensRoom;
+        cout << "Sqr of living: "; cin >> descriptHouse.livingRoom;
+        cout << "Sqr of kitchen: "; cin >> descriptHouse.kitchen;
+        cout << "Sqr of bathroom: "; cin >> descriptHouse.bathroom;
 
         if (!(descriptHouse.bedroom < 0 ||
             descriptHouse.childrensRoom < 0 ||
@@ -82,10 +80,10 @@ void initHouse () {
             allSqrFloor.push_back(descriptHouse.livingRoom);
             allSqrFloor.push_back(descriptHouse.kitchen);
             allSqrFloor.push_back(descriptHouse.bathroom);
-            descriptHouse.sqrFloor.push_back(allSqrFloor);
 
-            //Необходимо сюда добавить логику складывания поэтажной площади и типа вывести сколько квадратов дом
-            //Потом организовать функцию что юзер вводит желаемую площадь расчета после идет расчет от занятой площади
+            descriptHouse.totalSqrHouse += accumulate(allSqrFloor.begin(), allSqrFloor.end(), 0.0f);
+
+            descriptHouse.sqrFloor.push_back(allSqrFloor);
 
             } else {
                 cout << "\nInvalid Value";
@@ -93,8 +91,28 @@ void initHouse () {
             }
     }
 }
+void outInfAboutPlotAndHouse (plotSqr& plotSqr, house& descriptHouse) {
+    cout << "\nYou have entered the following parameters for plot number #" << plotSqr.numberPlot <<
+            "\n~Name: " << plotSqr.titlePlot <<
+            "\n~Size of garages: " << plotSqr.garage << " sq m"
+            "\n~Size of bathhouses: " << plotSqr.bathhouse << " sq m"
+            "\n~Size of barn: " << plotSqr.barn<< " sq m"
+            "\n~Total size plot: " << plotSqr.plotSqrt << " sq m";
+
+    cout << "\n\n*****************************************************"
+            "\nOn the plot '" << plotSqr.titlePlot << "' place house with " << descriptHouse.countFloor << " floors."
+            "\nTotal sqr house: " << descriptHouse.totalSqrHouse << " sq m";
+
+    float totalSqrAllBuildingOnPlot = descriptHouse.totalSqrHouse  + plotSqr.garage + plotSqr.barn + plotSqr.bathhouse;
+    float percentageOfаOccupiedTerritory = (totalSqrAllBuildingOnPlot / plotSqr.plotSqrt) * 100.0f;
+    cout << "\nPercentage of occupied territory " << percentageOfаOccupiedTerritory << "%";
+}
+
 
 int main () {
-    initPlot();
-    initHouse();
+    house descriptHouse;
+    plotSqr strctPlot;
+    initPlot(strctPlot);
+    initHouse(descriptHouse);
+    outInfAboutPlotAndHouse(strctPlot, descriptHouse);
 }
