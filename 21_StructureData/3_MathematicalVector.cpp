@@ -179,7 +179,7 @@ int main () {
     vectorStr vectorStr;
     string command = "";
     while (true) {
-        cout << "\n*******************************************"
+        cout << "\n\a*******************************************"
                 "\nChoise what you want to do:"
                 "\n~Init vector elements is the - init command;"
                 "\n~Out all vectors and elements - out command;"
