@@ -45,10 +45,10 @@ void dateBirthdInit (BirthdayReminder& birthdayReminder) {;
         ss >> day >> delimiter1 >> month >> delimiter2 >> year;
 
         bool checkDelimit = delimiter1 == '/' && delimiter2 == '/';
-        bool checkDate = (day > 0 && day < 31) && (month > 0 && month < 12) && year > 0;
+        bool checkDate = (day > 0 && day <= 31) && (month > 0 && month <= 12) && (year > 0 && year <= 2027);
         checkDateMain = checkDate && checkDelimit;
         if (!checkDateMain) {
-            cout << "\nInvalid date in format: 01/01/1999";
+            cout << "\nInvalid date in format.";
         }
     } while (!checkDateMain);
 
@@ -86,29 +86,30 @@ void CalculatingDateBirth (BirthdayReminder& birthdayReminder) {
 
         if (monthCurrent == month && dayCurrent == day) {
             cout << "\nIt's " << birthdayReminder.nameList[i] << " birthday today!"
-                    "\nDon't forget to wish him/her a happy birthday.";
+                    "\nDon't forget to wish him/her a happy birthday." << endl;
         }
         else if (monthCurrent <= month && dayCurrent <= day) {
-            cout << "\nAt " << birthdayReminder.nameList[i] << " is in " << month - monthCurrent << " months and " << day - dayCurrent << "days.";
+            cout << "\nAt " << birthdayReminder.nameList[i] << " is in " << month - monthCurrent << " months and " << day - dayCurrent << " days." << endl;
         } else {
-            cout << "\nAt " << birthdayReminder.nameList[i] << " birthday has passed!";
+            cout << "\nAt " << birthdayReminder.nameList[i] << " birthday has passed!" << endl;
         }
     }
 }
 
 int main () {
     BirthdayReminder birthdayReminder;
-    cout << "\nThe signal for finishing entering birthdays is “end” entered as a name.";
+    cout << "\nThe signal for finishing entering birthdays is ~end~ entered as a name.";
 
     bool logicContinueProgram = true;
 
     while (logicContinueProgram) {
         userNameInit (birthdayReminder, logicContinueProgram);
         if (!logicContinueProgram) {
-            cout << "\nYou have stopped the recording process.";
+            cout << "\nYou have stopped the recording process." << endl;
             break;
         }
         dateBirthdInit (birthdayReminder);
     }
+    CalculatingDateBirth (birthdayReminder);
     return 0;
 }
