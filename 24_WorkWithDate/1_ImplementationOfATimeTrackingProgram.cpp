@@ -61,7 +61,6 @@ void startTime (time_Struct& tmStrct) {
                currTimeForStart = " start in ";
         cin >> nameTask;
 
-
         tmStrct.lineForIntInHistory.push_back(nameTask);
 
         stringstream ss;
