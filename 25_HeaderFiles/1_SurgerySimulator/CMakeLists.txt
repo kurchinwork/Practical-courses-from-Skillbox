@@ -1,8 +1,12 @@
-cmake_minimum_required(VERSION 4.1)
-project("SurgerySim" VERSION 1.0)
+cmake_minimum_required(VERSION 3.26)
+project(SurgerySim)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(SurgerySim main.cpp strctSrgrSmltr.cpp allFuncSrgrSmltr.cpp srgrSmltr.h)
+include_directories(include)
 
-target_include_directories(SurgerySim PUBLIC include)
+add_executable(SurgerySim
+        src/main.cpp
+        src/allFuncSim.cpp
+        src/allFuncSim.cpp
+)
