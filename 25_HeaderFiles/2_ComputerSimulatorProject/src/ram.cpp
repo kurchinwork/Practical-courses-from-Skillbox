@@ -4,7 +4,7 @@
 //организовать буфер который хранит числа и очищается после работы
 #include <vector>
 #include <iostream>
-#include "../include/simComp.h"
+#include "simComp.h"
 
 void ramInsert (int& NumInsert) {
     sim.buffer.push_back(NumInsert);

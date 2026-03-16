@@ -3,7 +3,7 @@
 //
 
 //функция которая считывает или записывает числа в файл
-#include "../include/simComp.h"
+#include "simComp.h"
 #include <fstream>
 #include <iostream>
 

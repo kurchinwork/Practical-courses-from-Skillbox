@@ -6,7 +6,7 @@
 #include <string>
 #include <iostream>
 #include <limits>
-#include "../include/simComp.h"
+#include "simComp.h"
 
 using namespace std;
 

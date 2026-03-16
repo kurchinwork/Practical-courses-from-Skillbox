@@ -4,7 +4,7 @@
 
 //выводит числа из файла
 
-#include "../include/simComp.h"
+#include "simComp.h"
 #include <iostream>
 
 void display () {

@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include <string>
-#include "../include/simComp.h"
+#include "simComp.h"
 
 //функция сложения 8 чисел
 

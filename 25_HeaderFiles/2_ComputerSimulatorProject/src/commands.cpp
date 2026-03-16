@@ -3,7 +3,7 @@
 //
 #include <string>
 #include <iostream>
-#include "../include/simComp.h"
+#include "simComp.h"
 
 compSim sim;
 

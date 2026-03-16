@@ -1,5 +1,5 @@
 #include <iostream>
-#include "include/simComp.h"
+#include "simComp.h"
 
 using namespace std;
 
