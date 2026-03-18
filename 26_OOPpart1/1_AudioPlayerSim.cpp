@@ -8,15 +8,17 @@ using namespace std;
 
 class MusicTrack {
     public:
-    string nameTrack = "",
-           artistTrack = "";
+    string nameTrack = "Unknown",
+           artistTrack = "Unknown artist";
     int trackLength = 0;
 };
 
 class AudioPlayerSim {
-    public:
-    vector<vector <string>> CDdisk;
-    vector<MusicTrack> tracks;
+public:
+    vector<MusicTrack> playlist;
+    bool stopped = false;
+    bool isPlaying = false;
+
 
     void initializeTracks(MusicTrack Track) {
         tracks.push_back(Track.nameTrack);
@@ -31,12 +33,20 @@ class AudioPlayerSim {
                 "\nDuration:" << Track.trackLength;
     };
     void stop() {
-
+        if (playing) {
+            cout << "\nStopping...";
+        } else {
+            cout << "\nNot a penny is lost";
+        }
     }
     void pause() {
-
+        if (playing) {
+            cout << "\nPaused...";
+        } else {
+            cout << "\nPlaying...";
+        }
     }
-    void resume() {
+    void next() {
 
     }
 };
