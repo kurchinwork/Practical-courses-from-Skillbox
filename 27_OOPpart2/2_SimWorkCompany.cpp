@@ -23,7 +23,7 @@ class HeadCompany {
 private:
     string name = "Whoever",
            tagProject = "Unknown";
-    int taskID = 1;
+    int taskID = 0;
 
 public:
     void setInfAboutCEO (string& name, string& tagProject, int& taskID) {
@@ -31,18 +31,15 @@ public:
         this->tagProject = tagProject;
         this->taskID = taskID;
     }
-
     void getAboutHead () {
         cout<< "Here's who issued the project: " << name << endl <<
                "Project name: " << tagProject << endl <<
                "Project ID: " << taskID << endl;
     }
-
     int getTaskID () {
         return taskID;
     }
 };
-
 class Manager: public HeadCompany {
 private:
     string nameManager = "Whoever";
@@ -57,25 +54,37 @@ public:
     }
 
     int getIntParceTasks () {
-        int hash = getTaskID();
-        return (rand() % hash) + 1;
+        if (getTaskID() >= 0) {
+            int hash = getTaskID();
+            countTask = (rand() % hash) + 1;
+        } else {
+            cout << "No tasks from the Headcomp" << endl;
+            countTask = 0;
+        }
+        return countTask;
+    }
+
+    int getCountTask () {
+        return countTask;
     }
 
 
 };
-
 class Workers: public Manager {
 private:
     int group_a = 0;
     int group_b = 0;
     int group_c = 0;
 
+    bool status_workers_group_a = false,
+         status_workers_group_b = false,
+         status_workers_group_c = false;
+
+    int coefficientOneWorker = 2;
+
+
 public:
     void setWorkrers (int group_a, int group_b, int group_c) {
-        this->group_a = group_a;
-        this->group_b = group_b;
-        this->group_c = group_c;
-
         if (group_a > 10) {
             group_a = 10;
         }
@@ -85,6 +94,10 @@ public:
         if (group_c > 10) {
             group_c = 10;
         }
+
+        this->group_a = group_a;
+        this->group_b = group_b;
+        this->group_c = group_c;
     }
 
     bool getStatusWorkers () {
@@ -95,16 +108,71 @@ public:
         }
     }
 
+    //логика распределения задач
     void DistributionOfTasks () {
         if (getStatusWorkers ()) {
+            if (getCountTask() != 0) {
 
+                int countTask = getCountTask ();
+                int counter = 0;
+                string commandUser = "";
+
+                status_workers_group_a = status_workers_group_b = status_workers_group_c = false;
+
+                while (countTask > 0) {
+
+                    counter++;
+                    cout << "Approach to completing tasks #"<< counter << endl;
+                    if (group_a >= 1 && !status_workers_group_a) {
+                        cout << "Group workers A a took on tasks in quantity:" << countTask - group_a << endl;
+                        countTask -= group_a;
+                        status_workers_group_a = true;
+                    } else {
+                        cout << "Worker group A already has tasks" << endl;
+                    }
+                    if (group_b >= 1 && !status_workers_group_b) {
+                        cout << "Group workers B a took on tasks in quantity:" << countTask - group_b << endl;
+                        countTask -= group_b;
+                        status_workers_group_b = true;
+                    } else {
+                        cout << "Worker group B already has tasks" << endl;
+                    }
+                    if (group_c >= 1 && !status_workers_group_c) {
+                        cout << "Group workers C a took on tasks in quantity:" << countTask - group_c << endl;
+                        countTask -= group_c;
+                        status_workers_group_c = true;
+                    } else {
+                        cout << "Worker group C already has tasks" << endl;
+                    }
+
+                    if (countTask < 0) {
+                        cout << "The workers exceeded the plan" << endl;
+                    }
+
+                    cout << "If you want to continue the task, enter ~next~" << endl;
+
+                    cin >>commandUser;
+                    if (commandUser == "next") {
+
+                        status_workers_group_a = false;
+                        status_workers_group_b = false;
+                        status_workers_group_c = false;
+
+                    } else {
+                        break;
+                    }
+                }
+
+
+            } else {
+                cout << "There is not a single task to complete at workers" << endl;
+                return;
+            }
         } else {
             cout << "No employee has been appointed" << endl;
+            return;
         }
     }
-
-
-
 };
 
 void listCommands () {
@@ -126,9 +194,7 @@ int main() {
     int command = 99;
     srand(time(0));
 
-    HeadCompany FirstHead;
-    Manager FisrtManage;
-    Workers ForFisrtManage;
+    Workers CompanyUnit;
 
     do {
         if (command == Command) {
@@ -137,17 +203,18 @@ int main() {
             cout << "Enter the name of the company's CEO:"; cin >> name;
             cout << "Enter the project name:"; cin >> tagProject;
             cout << "Enter the task ID:"; cin >> taskID;
-            FirstHead.setInfAboutCEO (name,tagProject,taskID);
+            CompanyUnit.setInfAboutCEO (name,tagProject,taskID);
         }
         else if (command == CEOinf) {
-            FirstHead.getAboutHead();
+            CompanyUnit.getAboutHead();
         } else if (command == Manage) {
             cout << "Enter the name of the company's Manage:"; cin >> name;
-            FisrtManage.setNameManager(name);
+            CompanyUnit.setNameManager(name);
         } else if (command == ManageInf) {
-            FisrtManage.getAboutManager();
+            CompanyUnit.getAboutManager();
         } else if (command == GiveTask) {
-
+            CompanyUnit.getIntParceTasks();
+            CompanyUnit.DistributionOfTasks();
         } else if (command == AddWorker) {
             cout << "Set the number of workers for different groups"
                     "\n(The number of workers in each group is no more than 10):" << endl;
@@ -155,7 +222,7 @@ int main() {
             cout << "Count for group A:"; cin >> group_a;
             cout << "Count for group B:"; cin >> group_b;
             cout << "Count for group C:"; cin >> group_c;
-            ForFisrtManage.setWorkrers(group_a, group_b, group_c);
+            CompanyUnit.setWorkrers(group_a, group_b, group_c);
         }
 
         cout << "Enter num command:";
