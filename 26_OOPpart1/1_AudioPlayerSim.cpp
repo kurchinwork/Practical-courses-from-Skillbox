@@ -51,7 +51,7 @@ public:
         return AllTracks.size();
     }
     void getTrack(int i) {
-        cout << "\nTrack #"<< i + 1 << " "<<AllTracks[i].nameTrack
+        cout << "\nTrack #"<< i + 1 << " " <<AllTracks[i].nameTrack
              << "\nArtist:  " << AllTracks[i].artistTrack
              << "\nDuration: " << AllTracks[i].trackLength << " sec. "<<endl;
     }
