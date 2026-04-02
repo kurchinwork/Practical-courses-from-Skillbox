@@ -16,8 +16,6 @@ class Dish {
 private:
     string nameDish = "Unknown";
     int cookingTime = 0;
-
-    bool statusLocked = false;
 public:
     Dish(string name, int time) : nameDish(name), cookingTime(time) {}
 
@@ -27,20 +25,49 @@ public:
 class KitchenWorkSim {
 private:
     vector<Dish> dishsList;
+    int countCookedDish = 0;
+    int deliveryInProgress = 0;
+
 public:
 
     void OutDishDone (string nameDish, int cookingTime) {
         this_thread::sleep_for(chrono::seconds(cookingTime));
 
-        cout << "~~~~~~!!!!!!!!!!!~~~~~~"
+        lock_guard lock(cooking_mx);
+        cout << "\n~~~~~~!!!!!!!!!!!~~~~~~"
                 "\nDish: " << nameDish << " will be cooking at " << cookingTime << " sec."<< endl;
+        countCookedDish++;
+
+        cout << "\n\nEnter name dish "
+                "\n(or 'List'/'Done'): " << endl;
+        cout.flush(); //это команда, которая принудительно выталкивает всё содержимое буфера в консоль «прямо сейчас».
     }
+    void StartDelivery(int id) {
+
+        this_thread::sleep_for(chrono::seconds(30));
+
+        lock_guard lock(cooking_mx);
+        cout << "\n~~~~~~DOSTAVKA SUCCESS~~~~~~"
+                "\nOrder #" << id << " has been delivered!" << endl;
+
+        cout << "Enter name dish (or 'List'/'Delivery'/'Done'): ";
+        cout.flush();
+    }
+
 
     //сразу передаю конструктор для добавления в вектор
     void AddDishInList (string nameDish, int cookingTime) {
         dishsList.emplace_back(nameDish, cookingTime);
-        OutDishDone(nameDish, cookingTime);
 
+        thread treadCooking(& KitchenWorkSim::OutDishDone, this, nameDish, cookingTime);
+
+        // ЗАПУСК ПОТОКА: (памятка)
+        // 1. &KitchenWorkSim::OutDishDone — адрес метода
+        // 2. this — указатель на текущий объект класса
+        // 3. nameDish, cookingTime — аргументы метода
+
+        // Отсоединяем поток, чтобы он жил своей жизнью
+        treadCooking.detach();
 
 
 
@@ -50,10 +77,25 @@ public:
         for (int i = 0; i < dishsList.size(); i++) {
             cout << "Dish #"<< i + 1 << " : " << dishsList.at(i).nameDish << " cooking " << dishsList.at(i).cookingTime << " sec."<< endl;
         }
+        lock_guard lock(cooking_mx);
     }
 
+    void delivery () {
+        lock_guard lock(cooking_mx);
+        if (countCookedDish <= 0) {
+            cout << "Net gotovih blud" << endl;
+        } else {
+            countCookedDish--; // забираем одно готовое блюдо
+            deliveryInProgress++;
 
+            cout << "\nKurjer starting dostavka..." << endl;
 
+            // поток доставки
+            thread t(&KitchenWorkSim::StartDelivery, this, deliveryInProgress);
+            t.detach();
+
+        }
+    }
 };
 
 int main() {
@@ -65,7 +107,8 @@ int main() {
 
     cout << "Enter the dishes you want to add to the cooking list." << endl
          << "~Done - stops initialize list" << endl
-         << "~List - out all dishes" << endl;
+         << "~List - out all dishes" << endl <<
+            "~Delivery - to give zakaz to dostavka" << endl;
 
     do {
         command = "";
@@ -75,10 +118,14 @@ int main() {
 
         if (command == "Done") break;
         if (command == "List") {
-            kitchenWorkSim.OutDishList();
+                kitchenWorkSim.OutDishList();
+        }
+        if (command == "Delivery") {
+            kitchenWorkSim.delivery();
         } else {
             kitchenWorkSim.AddDishInList(command, rand() % 10 + 5);
         }
+
     } while (true);
 }
 
