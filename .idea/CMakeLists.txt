@@ -12,4 +12,6 @@ add_executable(_idea
         ../zadanie_1_15.cpp
         ../zadanie_3_15.cpp
         ../zadanie_3_15.cpp
-        ../22_stdMap_dictionaries/3_Annagrams.cpp)
+        ../22_stdMap_dictionaries/3_Annagrams.cpp
+        ../31_OOPPart4/1_UseSmartPtr.cpp
+        ../31_OOPPart4/2_SmartPtr.cpp)
