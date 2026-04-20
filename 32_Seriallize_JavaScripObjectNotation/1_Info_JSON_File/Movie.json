@@ -1,0 +1,34 @@
+{
+    "Inglourious Basterds": {
+        "Country:": "USA, Germany",
+        "Director:": "Quentin Tarantino",
+        "Genre:": "War, Action",
+        "Producer:": "Lawrence Bender",
+        "Scenario director:": "Quentin Tarantino",
+        "Year production:": 2009
+    },
+    "Kill Bill: Vol. 1": {
+        "Country:": "USA",
+        "Director:": "Quentin Tarantino",
+        "Genre:": "Action, Martial Arts",
+        "Producer:": "Lawrence Bender",
+        "Scenario director:": "Quentin Tarantino",
+        "Year production:": 2003
+    },
+    "Pulp Fiction": {
+        "Country:": "USA",
+        "Director:": "Quentin Tarantino",
+        "Genre:": "Crime, Drama",
+        "Producer:": "Lawrence Bender",
+        "Scenario director:": "Quentin Tarantino",
+        "Year production:": 1994
+    },
+    "Reservoir Dogs": {
+        "Country:": "USA",
+        "Director:": "Quentin Tarantino",
+        "Genre:": "Crime, Thriller",
+        "Producer:": "Lawrence Bender",
+        "Scenario director:": "Quentin Tarantino",
+        "Year production:": 1992
+    }
+}
