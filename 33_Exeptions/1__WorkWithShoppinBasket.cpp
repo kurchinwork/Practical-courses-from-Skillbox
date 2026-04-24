@@ -40,6 +40,7 @@ public:
             throw std::invalid_argument ("\nThe count of deleted items must not be greater than the number in the cart.");
 
             //дописать конструкцию в мейн
+            //удаление такое же как и добавление item.second.del.. и тд
         }
     }
 
