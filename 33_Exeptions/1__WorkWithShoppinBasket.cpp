@@ -38,10 +38,8 @@ public:
     void delCount (int count) {
         if (countProd - count < 0) {
             throw std::invalid_argument ("\nThe count of deleted items must not be greater than the number in the cart.");
-
-            //дописать конструкцию в мейн
-            //удаление такое же как и добавление item.second.del.. и тд
         }
+        countProd-=count;
     }
 
     std::string getNameProd () const { return nameProd; }
@@ -69,6 +67,7 @@ void showAllItemsInCart (const std::map<std::string, Product>& cart) {
 }
 
 int main () {
+
     std::map<std::string, Product> cart;
     std::string nameProduct,
         command = "list",
@@ -76,7 +75,6 @@ int main () {
 
     int countForAdd = 0,
         countForDel = 0;
-
 
     do {
 
@@ -110,17 +108,19 @@ int main () {
             }
         } else if (command == "Del") {
             std::cout << "\nEnter article for del count"; std::cin >> article;
-
             auto item = cart.find(article);
             if (item != cart.end()) {
                 std::cout << "\nEnter count product be deleted:"; std::cin >> countForDel;
+                try {
+                    item->second.delCount(countForDel);
+                } catch (const std::invalid_argument &error) {
+                    std::cout << "\nError:" << error.what() << std::endl;
+                    std::cout << "Try again";
+                }
 
             } else {
                 std::cout << "\nProduct with article " << article << " is not in the basket" << std::endl;
             }
-
-
-
         } else if (command == "Show") {
             try {
                 showAllItemsInCart(cart);
@@ -132,11 +132,5 @@ int main () {
             std::cout << "\nInvalid command" << std::endl;
         }
     } while (command != "exit");
-
-
-
-
-
-
     return 0;
 }
