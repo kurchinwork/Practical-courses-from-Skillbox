@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>280</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(31, 31, 31);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>8</x>
+      <y>7</y>
+      <width>262</width>
+      <height>661</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="2">
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="pushButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(208, 45, 45);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(230, 49, 49);
+}
+
+QPushButton:pressed {
+    background-color: rgb(182, 39, 39); 
+}</string>
+       </property>
+       <property name="text">
+        <string>Power</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>Mute</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>4</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>5</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>8</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>7</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>6</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QPushButton" name="pushButton_13">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>+</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="3">
+      <widget class="QPushButton" name="pushButton_14">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>+</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="2">
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="8" column="3">
+      <widget class="QPushButton" name="pushButton_16">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QPushButton" name="pushButton_15">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QPushButton" name="pushButton_11">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>9</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QPushButton" name="pushButton_12">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	border: none;
+	background-color: rgb(86, 86, 86);
+	color: rgb(255, 255, 255);
+	border-radius: 30px;
+}
+
+QPushButton:hover {
+    background-color: rgb(113, 113, 113);
+}
+
+QPushButton:pressed {
+    background-color: rgb(52, 52, 52); 
+}</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="3">
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+</string>
+       </property>
+       <property name="text">
+        <string>Channel</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>15</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+</string>
+       </property>
+       <property name="text">
+        <string>Volume</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="3">
+      <widget class="QLCDNumber" name="lcdNumber">
+       <property name="styleSheet">
+        <string notr="true">QLCDNumber {
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 32, 35);
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLCDNumber" name="lcdNumber_2">
+       <property name="styleSheet">
+        <string notr="true">QLCDNumber {
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 32, 35);
+}</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>PowerButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>30</x>
+     <y>57</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>121</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>MuteButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>203</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>123</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Num1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>51</x>
+     <y>183</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>54</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Num4()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>40</x>
+     <y>249</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>72</x>
+     <y>412</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_9</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Num7()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>17</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>19</x>
+     <y>403</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Num2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>189</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>126</x>
+     <y>463</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_7</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Num5()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>126</x>
+     <y>502</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_10</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Num8()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>134</x>
+     <y>329</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>124</x>
+     <y>535</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_12</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Num0()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>124</x>
+     <y>570</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Num3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>183</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>369</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Num6()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>229</x>
+     <y>250</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>208</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>Num9()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>217</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>417</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_13</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>VlmPlus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>50</x>
+     <y>534</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>106</x>
+     <y>610</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_15</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>VlmSubstr()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>40</x>
+     <y>619</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>123</x>
+     <y>631</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_14</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ChnlPlus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>212</x>
+     <y>528</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>153</x>
+     <y>519</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_16</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>ChnlSubstr()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>216</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>152</x>
+     <y>562</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>Num1()</slot>
+  <slot>Num2()</slot>
+  <slot>Num3()</slot>
+  <slot>Num4()</slot>
+  <slot>Num5()</slot>
+  <slot>Num6()</slot>
+  <slot>Num7()</slot>
+  <slot>Num8()</slot>
+  <slot>Num9()</slot>
+  <slot>Num0()</slot>
+  <slot>PowerButton()</slot>
+  <slot>MuteButton()</slot>
+  <slot>VlmPlus()</slot>
+  <slot>VlmSubstr()</slot>
+  <slot>ChnlPlus()</slot>
+  <slot>ChnlSubstr()</slot>
+ </slots>
+</ui>
